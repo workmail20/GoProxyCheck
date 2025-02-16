@@ -32,7 +32,7 @@ func workerThread(offset *int, mu *sync.Mutex, lines *[]string, wg *sync.WaitGro
 		var tmpElement string = (*lines)[localOffset]
 
 		res, err := fetchGoogleThroughSocks5(tmpElement)
-		if strings.Contains(res, "</html>") && (err == nil) {
+		if strings.Contains(res, "OK") && (err == nil) {
 			fmt.Println(localOffset+1, " Checking: ", tmpElement, " GOOD")
 			*outLines = append(*outLines, tmpElement)
 		} else {
@@ -75,7 +75,7 @@ func fetchGoogleThroughSocks5(proxyAddr string) (string, error) {
 		Timeout:   7 * time.Second,
 	}
 
-	req, err := http.NewRequest("GET", "https://microsoft.com", nil)
+	req, err := http.NewRequest("GET", "https://fedoraproject.org/static/hotspot.txt", nil)
 	if err != nil {
 		return "", fmt.Errorf("error NewRequest: %w", err)
 	}
