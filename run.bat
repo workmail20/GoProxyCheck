@@ -1,0 +1,1 @@
+check1 -i "C:\\Users\\Dev\\Documents\\repos\\GoProxyCheck\\socks.txt" -o "C:\\Users\\Dev\\Documents\\repos\\GoProxyCheck\\checked.txt" -t 10
